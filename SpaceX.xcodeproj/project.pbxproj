@@ -58,13 +58,37 @@
 			children = (
 				BA19563628A0D68300F00C4E /* AppDelegate.swift */,
 				BA19563828A0D68300F00C4E /* SceneDelegate.swift */,
-				BA19563A28A0D68300F00C4E /* ViewController.swift */,
-				BA19563C28A0D68300F00C4E /* Main.storyboard */,
-				BA19563F28A0D68600F00C4E /* Assets.xcassets */,
-				BA19564128A0D68600F00C4E /* LaunchScreen.storyboard */,
+				BA19564A28A0D6FC00F00C4E /* Controllers */,
+				BA19564C28A0D72C00F00C4E /* Views */,
+				BA19564B28A0D71B00F00C4E /* Supporting Files */,
 				BA19564428A0D68600F00C4E /* Info.plist */,
 			);
 			path = SpaceX;
+			sourceTree = "<group>";
+		};
+		BA19564A28A0D6FC00F00C4E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA19563A28A0D68300F00C4E /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BA19564B28A0D71B00F00C4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA19563F28A0D68600F00C4E /* Assets.xcassets */,
+				BA19564128A0D68600F00C4E /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BA19564C28A0D72C00F00C4E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA19563C28A0D68300F00C4E /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
