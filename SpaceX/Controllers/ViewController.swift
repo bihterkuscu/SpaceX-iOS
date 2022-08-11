@@ -19,8 +19,12 @@ class ViewController: UIViewController {
         Rockets(rocketName: "falcon", rocketImage: "FalconTestPng")
     ]
     
+    var rocketManager = RocketManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let rocketURL = "https://api.spacexdata.com/v4/rockets"
+        rocketManager.performRequest(with: rocketURL)
         
         tableView.dataSource = self
         // Do any additional setup after loading the view.
