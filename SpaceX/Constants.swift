@@ -8,6 +8,9 @@
 struct K {
     static let cellIdentifier = "cell"
     static let cellNibName = "RocketViewCell"
+    static let registerSegue = "RegisterToApp"
+    static let loginSegue = "LoginToApp"
+    static let welcometologin = "welcomeToRocket"
 }
 
 struct Constants {

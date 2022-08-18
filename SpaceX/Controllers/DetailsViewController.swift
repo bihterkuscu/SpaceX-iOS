@@ -10,30 +10,21 @@ import UIKit
 class DetailsViewController: UIViewController {
 
     @IBOutlet weak var rocketImg: UIImageView!
-    @IBOutlet weak var slideGallery: UICollectionView!
-    @IBOutlet weak var rocketDetail: UILabel!
-    
-    
-    var details: String!
 
+    @IBOutlet weak var rocketDetail: UILabel!
+    @IBOutlet weak var rocketType: UILabel!
+    @IBOutlet weak var rocketName: UILabel!
+    
+    var detailsData :RocketData = RocketData(flickr_images: ["",""], description: "", id: "", name: "", type: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        rocketDetail.text = details
-
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "spaceXIOsBg")!)
+        
+        self.rocketName.text=detailsData.name
+        self.rocketDetail.text=detailsData.description
+        self.rocketType.text=detailsData.type
+        self.rocketImg.load(urlString: detailsData.flickr_images[0])
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
