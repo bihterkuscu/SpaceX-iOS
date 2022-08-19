@@ -55,5 +55,21 @@ struct RocketManager {
         }
         return data
     }
+    
+    func downloadRockets(url: URL, completion: @escaping ([RocketData]?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(nil)
+            } else if let data = data {
+                let rocketsArray = try? JSONDecoder().decode([RocketData].self, from: data)
+                if let rocketsArray = rocketsArray {
+                    completion(rocketsArray)
+                }
+            }
+        }.resume()
+    }
 }
+
+
     

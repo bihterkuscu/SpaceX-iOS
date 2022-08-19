@@ -26,6 +26,7 @@
 		BA99EB6328AE040E00735615 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EB6228AE040E00735615 /* RegisterViewController.swift */; };
 		BA99EB6528AE0D6200735615 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EB6428AE0D6200735615 /* WelcomeViewController.swift */; };
 		BAC37B2728AE13D300BF136D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC37B2628AE13D300BF136D /* LoginViewController.swift */; };
+		BAC37B2A28AE75A300BF136D /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC37B2928AE75A300BF136D /* UpcomingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		BA99EB6228AE040E00735615 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BA99EB6428AE0D6200735615 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BAC37B2628AE13D300BF136D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BAC37B2928AE75A300BF136D /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UpcomingViewController.swift; path = "/Users/elifbihterkuscu/Desktop/SpaceX-iOS/SpaceX/Controllers/Login/UpcomingViewController.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +115,6 @@
 				BA19564B28A0D71B00F00C4E /* Supporting Files */,
 				BA19564428A0D68600F00C4E /* Info.plist */,
 				BA99EB6028AD27CD00735615 /* GoogleService-Info.plist */,
-				BA19567128A2304300F00C4E /* Constants.swift */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -123,10 +124,8 @@
 			children = (
 				BA19563A28A0D68300F00C4E /* RocketsViewController.swift */,
 				BA99EB4728ABAC8200735615 /* DetailsViewController.swift */,
+				BAC37B2B28AE75B100BF136D /* Upcoming */,
 				BAC37B2828AE250100BF136D /* Login */,
-				BA99EB6428AE0D6200735615 /* WelcomeViewController.swift */,
-				BAC37B2628AE13D300BF136D /* LoginViewController.swift */,
-				BA99EB6228AE040E00735615 /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,6 +135,7 @@
 			children = (
 				BA19563F28A0D68600F00C4E /* Assets.xcassets */,
 				BA19564128A0D68600F00C4E /* LaunchScreen.storyboard */,
+				BA19567128A2304300F00C4E /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,8 +171,19 @@
 		BAC37B2828AE250100BF136D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				BA99EB6228AE040E00735615 /* RegisterViewController.swift */,
+				BAC37B2628AE13D300BF136D /* LoginViewController.swift */,
+				BA99EB6428AE0D6200735615 /* WelcomeViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		BAC37B2B28AE75B100BF136D /* Upcoming */ = {
+			isa = PBXGroup;
+			children = (
+				BAC37B2928AE75A300BF136D /* UpcomingViewController.swift */,
+			);
+			path = Upcoming;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 				BA19563928A0D68300F00C4E /* SceneDelegate.swift in Sources */,
 				BA99EB2F28AA6BF000735615 /* WebService.swift in Sources */,
 				BA19567228A2304300F00C4E /* Constants.swift in Sources */,
+				BAC37B2A28AE75A300BF136D /* UpcomingViewController.swift in Sources */,
 				BA99EB4828ABAC8200735615 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

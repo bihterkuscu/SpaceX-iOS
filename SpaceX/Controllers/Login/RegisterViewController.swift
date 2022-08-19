@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  SpaceX
 //
 //  Created by Elif Bihter Kuşçu on 18.08.2022.
@@ -8,11 +8,11 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
     
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
-    @IBAction func loginPressed(_ sender: UIButton) {
+    @IBAction func registerPressed(_ sender: UIButton) {
         
         if let email = emailTextfield.text, let password = passwordTextfield.text {
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
@@ -33,5 +33,21 @@ class LoginViewController: UIViewController {
         present(alert, animated: true) {
             
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+    }
+}
+extension UIViewController {
+    func hideKeyboardWhenTappedAroundd() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboardd() {
+        view.endEditing(true)
     }
 }

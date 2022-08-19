@@ -27,7 +27,7 @@ class RocketsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func getData() {
         let url = URL(string: "https://api.spacexdata.com/v4/rockets")
-        Webservice().downloadRockets(url: url!) { (rockets) in
+        RocketManager().downloadRockets(url: url!) { (rockets) in
             if let rockets = rockets {
                 self.rocketsTableViewModel = RocketsTableViewModel(rocketList: rockets)
                 
