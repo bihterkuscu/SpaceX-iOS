@@ -27,12 +27,12 @@ struct RocketsViewModel {
     let rockets: RocketData
 }
 
-    extension RocketsViewModel {
-        var rocketsName: String {
+extension RocketsViewModel {
+    var rocketsName: String {
         return self.rockets.name
-}
-
+    }
+    
     var rocketsImage: Array<String> {
         return self.rockets.flickr_images
-}
     }
+}

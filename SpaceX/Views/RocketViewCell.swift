@@ -11,9 +11,28 @@ class RocketViewCell: UITableViewCell {
 
     @IBOutlet weak var rocketImage: UIImageView!
     @IBOutlet weak var rocketName: UILabel!
-    @IBOutlet weak var favImage: UIImageView!
-    
-    
+   
+    @IBOutlet weak var favButton: UIButton!
+    @IBAction func favButtonn(_ sender: UIButton) {
+        
+//        if let fav = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
+//            db.collection(K.FStore.collectionName).addDocument(data: [
+//                K.FStore.senderField: messageSender,
+//                K.FStore.bodyField: messageBody,
+//                K.FStore.dateField: Date().timeIntervalSince1970
+//            ]) { (error) in
+//                if let e = error {
+//                    print("There was an issue saving data to firestore, \(e)")
+//                } else {
+//                    print("Successfully saved data.")
+//
+//                    DispatchQueue.main.async {
+//                         self.messageTextfield.text = ""
+//                    }
+//                }
+//            }
+//        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,7 +43,6 @@ class RocketViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
 var imageList = NSCache<AnyObject, AnyObject>()
 extension UIImageView {

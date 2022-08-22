@@ -12,6 +12,9 @@ class RocketsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func favoriteButton(_ sender: UIButton) {
+
+    }
     private var rocketsTableViewModel: RocketsTableViewModel!
     
     override func viewDidLoad() {
@@ -47,6 +50,7 @@ class RocketsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let rocketsViewModel = self.rocketsTableViewModel.rocketsAtIndexPath(indexPath.row)
         cell.rocketName.text = rocketsViewModel.rocketsName
         cell.rocketImage.load(urlString: rocketsViewModel.rocketsImage[0])
+        // cell.favButton.setImage(UIImage(named: "barsTabBarElementsItemsStar"), for: .normal)
         return cell
     }
     

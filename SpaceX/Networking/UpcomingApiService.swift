@@ -1,16 +1,16 @@
 //
-//  ApiService.swift
+//  UpcomingApiService.swift
 //  SpaceX
 //
-//  Created by Elif Bihter Kuşçu on 15.08.2022.
+//  Created by Elif Bihter Kuşçu on 19.08.2022.
 //
 
 import Foundation
 import UIKit
 
-struct RocketManager {
+struct UpcomingManager {
     
-    let rocketURL = "https://api.spacexdata.com/v4/rockets"
+    let upcomingURL = "https://api.spacexdata.com/v4/launches/upcoming"
     
     func performRequest(with urlString: String) {
         
@@ -32,11 +32,12 @@ struct RocketManager {
             task.resume()
         }
     }
-    func parseJSON(rocketData: Data) -> Array<RocketData> {
+    func parseJSON(upcomingData: Data) -> Array<UpcomingData> {
         let decoder = JSONDecoder()
-        let data = [RocketData]()
+        let data = [UpcomingData]()
         do {
-            let data = try decoder.decode([RocketData].self, from: rocketData)
+            let data = try decoder.decode([UpcomingData].self, from: upcomingData)
+            
             return data
         } catch {
             print(error)
@@ -44,20 +45,19 @@ struct RocketManager {
         return data
     }
     
-    func downloadRockets(url: URL, completion: @escaping ([RocketData]?) -> ()) {
+    func downloadUpcomings(url: URL, completion: @escaping ([UpcomingData]?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
                 completion(nil)
             } else if let data = data {
-                let rocketsArray = try? JSONDecoder().decode([RocketData].self, from: data)
-                if let rocketsArray = rocketsArray {
-                    completion(rocketsArray)
+           
+            
+                let upcomingArray = try? JSONDecoder().decode([UpcomingData].self, from: data)
+                if let upcomingArray = upcomingArray {
+                    completion(upcomingArray)
                 }
             }
         }.resume()
     }
 }
-
-
-    

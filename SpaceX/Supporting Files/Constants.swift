@@ -26,3 +26,13 @@ enum HttpHeaderField: String {
 enum ContentType: String {
     case json = "application/json"
 }
+
+struct FavoritesDB {
+    static let collectionName = "Favorites"
+    static let userId = "UserUid"
+    static let description = "description"
+    static let images = "flickr_images"
+    static let id = "id"
+    static let name = "name"
+    static let type = "type"
+}

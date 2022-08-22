@@ -15,9 +15,8 @@
 		BA19564028A0D68600F00C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA19563F28A0D68600F00C4E /* Assets.xcassets */; };
 		BA19564328A0D68600F00C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA19564128A0D68600F00C4E /* LaunchScreen.storyboard */; };
 		BA19567228A2304300F00C4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19567128A2304300F00C4E /* Constants.swift */; };
-		BA99EADC28A38C2E00735615 /* RocketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EADB28A38C2E00735615 /* RocketData.swift */; };
+		BA99EADC28A38C2E00735615 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EADB28A38C2E00735615 /* Data.swift */; };
 		BA99EB1E28AA661B00735615 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EB1D28AA661B00735615 /* ApiService.swift */; };
-		BA99EB2F28AA6BF000735615 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EB2E28AA6BF000735615 /* WebService.swift */; };
 		BA99EB3828AB636000735615 /* RocketViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EB3628AB636000735615 /* RocketViewCell.swift */; };
 		BA99EB3928AB636000735615 /* RocketViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA99EB3728AB636000735615 /* RocketViewCell.xib */; };
 		BA99EB4528AB88FF00735615 /* RocketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EB4428AB88FF00735615 /* RocketsViewModel.swift */; };
@@ -25,6 +24,12 @@
 		BA99EB6128AD27CD00735615 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA99EB6028AD27CD00735615 /* GoogleService-Info.plist */; };
 		BA99EB6328AE040E00735615 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EB6228AE040E00735615 /* RegisterViewController.swift */; };
 		BA99EB6528AE0D6200735615 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EB6428AE0D6200735615 /* WelcomeViewController.swift */; };
+		BAA66C6D28AF7678000BE982 /* UpcomingApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA66C6C28AF7678000BE982 /* UpcomingApiService.swift */; };
+		BAA66C6F28AF7DC5000BE982 /* UpcomingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA66C6E28AF7DC5000BE982 /* UpcomingDetailsViewController.swift */; };
+		BAA66C7228AF816F000BE982 /* UpcomingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA66C7028AF816F000BE982 /* UpcomingViewCell.swift */; };
+		BAA66C7328AF816F000BE982 /* UpcomingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAA66C7128AF816F000BE982 /* UpcomingViewCell.xib */; };
+		BAA66C7528AF8469000BE982 /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA66C7428AF8469000BE982 /* UpcomingViewModel.swift */; };
+		BAA66C7728B2BF6C000BE982 /* DateOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA66C7628B2BF6C000BE982 /* DateOperation.swift */; };
 		BAC37B2728AE13D300BF136D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC37B2628AE13D300BF136D /* LoginViewController.swift */; };
 		BAC37B2A28AE75A300BF136D /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC37B2928AE75A300BF136D /* UpcomingViewController.swift */; };
 /* End PBXBuildFile section */
@@ -42,9 +47,8 @@
 		BA19564228A0D68600F00C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA19564428A0D68600F00C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA19567128A2304300F00C4E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		BA99EADB28A38C2E00735615 /* RocketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketData.swift; sourceTree = "<group>"; };
+		BA99EADB28A38C2E00735615 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		BA99EB1D28AA661B00735615 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		BA99EB2E28AA6BF000735615 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		BA99EB3628AB636000735615 /* RocketViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewCell.swift; sourceTree = "<group>"; };
 		BA99EB3728AB636000735615 /* RocketViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RocketViewCell.xib; sourceTree = "<group>"; };
 		BA99EB4428AB88FF00735615 /* RocketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewModel.swift; sourceTree = "<group>"; };
@@ -52,6 +56,12 @@
 		BA99EB6028AD27CD00735615 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA99EB6228AE040E00735615 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BA99EB6428AE0D6200735615 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		BAA66C6C28AF7678000BE982 /* UpcomingApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingApiService.swift; sourceTree = "<group>"; };
+		BAA66C6E28AF7DC5000BE982 /* UpcomingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDetailsViewController.swift; sourceTree = "<group>"; };
+		BAA66C7028AF816F000BE982 /* UpcomingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewCell.swift; sourceTree = "<group>"; };
+		BAA66C7128AF816F000BE982 /* UpcomingViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingViewCell.xib; sourceTree = "<group>"; };
+		BAA66C7428AF8469000BE982 /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
+		BAA66C7628B2BF6C000BE982 /* DateOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOperation.swift; sourceTree = "<group>"; };
 		BAC37B2628AE13D300BF136D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BAC37B2928AE75A300BF136D /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UpcomingViewController.swift; path = "/Users/elifbihterkuscu/Desktop/SpaceX-iOS/SpaceX/Controllers/Login/UpcomingViewController.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -146,6 +156,8 @@
 				BA19563C28A0D68300F00C4E /* Main.storyboard */,
 				BA99EB3628AB636000735615 /* RocketViewCell.swift */,
 				BA99EB3728AB636000735615 /* RocketViewCell.xib */,
+				BAA66C7028AF816F000BE982 /* UpcomingViewCell.swift */,
+				BAA66C7128AF816F000BE982 /* UpcomingViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,8 +165,9 @@
 		BA19566A28A2277200F00C4E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BA99EADB28A38C2E00735615 /* RocketData.swift */,
+				BA99EADB28A38C2E00735615 /* Data.swift */,
 				BA99EB4428AB88FF00735615 /* RocketsViewModel.swift */,
+				BAA66C7428AF8469000BE982 /* UpcomingViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				BA99EB1D28AA661B00735615 /* ApiService.swift */,
-				BA99EB2E28AA6BF000735615 /* WebService.swift */,
+				BAA66C6C28AF7678000BE982 /* UpcomingApiService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -182,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				BAC37B2928AE75A300BF136D /* UpcomingViewController.swift */,
+				BAA66C6E28AF7DC5000BE982 /* UpcomingDetailsViewController.swift */,
+				BAA66C7628B2BF6C000BE982 /* DateOperation.swift */,
 			);
 			path = Upcoming;
 			sourceTree = "<group>";
@@ -246,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA66C7328AF816F000BE982 /* UpcomingViewCell.xib in Resources */,
 				BA19564328A0D68600F00C4E /* LaunchScreen.storyboard in Resources */,
 				BA19564028A0D68600F00C4E /* Assets.xcassets in Resources */,
 				BA99EB6128AD27CD00735615 /* GoogleService-Info.plist in Resources */,
@@ -303,18 +319,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA66C7528AF8469000BE982 /* UpcomingViewModel.swift in Sources */,
 				BAC37B2728AE13D300BF136D /* LoginViewController.swift in Sources */,
+				BAA66C7228AF816F000BE982 /* UpcomingViewCell.swift in Sources */,
 				BA19563B28A0D68300F00C4E /* RocketsViewController.swift in Sources */,
+				BAA66C6D28AF7678000BE982 /* UpcomingApiService.swift in Sources */,
 				BA99EB3828AB636000735615 /* RocketViewCell.swift in Sources */,
 				BA19563728A0D68300F00C4E /* AppDelegate.swift in Sources */,
 				BA99EB6328AE040E00735615 /* RegisterViewController.swift in Sources */,
 				BA99EB1E28AA661B00735615 /* ApiService.swift in Sources */,
-				BA99EADC28A38C2E00735615 /* RocketData.swift in Sources */,
+				BA99EADC28A38C2E00735615 /* Data.swift in Sources */,
 				BA99EB6528AE0D6200735615 /* WelcomeViewController.swift in Sources */,
 				BA99EB4528AB88FF00735615 /* RocketsViewModel.swift in Sources */,
 				BA19563928A0D68300F00C4E /* SceneDelegate.swift in Sources */,
-				BA99EB2F28AA6BF000735615 /* WebService.swift in Sources */,
 				BA19567228A2304300F00C4E /* Constants.swift in Sources */,
+				BAA66C6F28AF7DC5000BE982 /* UpcomingDetailsViewController.swift in Sources */,
+				BAA66C7728B2BF6C000BE982 /* DateOperation.swift in Sources */,
 				BAC37B2A28AE75A300BF136D /* UpcomingViewController.swift in Sources */,
 				BA99EB4828ABAC8200735615 /* DetailsViewController.swift in Sources */,
 			);

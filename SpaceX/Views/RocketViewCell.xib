@@ -22,22 +22,24 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barsTabBarElementsItemsStar" translatesAutoresizingMaskIntoConstraints="NO" id="H9q-DC-jSF">
-                        <rect key="frame" x="369" y="0.0" width="46" height="136"/>
-                    </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0SH-Xh-AfP">
                         <rect key="frame" x="92" y="55" width="241" height="223"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQc-zk-LWv">
+                        <rect key="frame" x="341" y="32" width="67" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                        <connections>
+                            <action selector="favButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LfG-7g-nWu"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="H9q-DC-jSF" secondAttribute="bottom" constant="163" id="766-JA-kLu"/>
                     <constraint firstItem="0SH-Xh-AfP" firstAttribute="leading" secondItem="FVi-FL-M63" secondAttribute="trailing" constant="8" symbolic="YES" id="IcF-Hu-ABZ"/>
                     <constraint firstItem="0SH-Xh-AfP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="J4C-gk-Klk"/>
-                    <constraint firstItem="H9q-DC-jSF" firstAttribute="leading" secondItem="0SH-Xh-AfP" secondAttribute="trailing" constant="8" symbolic="YES" id="LuB-GC-IeW"/>
                     <constraint firstAttribute="bottom" secondItem="FVi-FL-M63" secondAttribute="bottom" constant="117" id="OEt-vO-7P7"/>
-                    <constraint firstItem="H9q-DC-jSF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Y2y-cr-1do"/>
                     <constraint firstItem="FVi-FL-M63" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="cXc-Bg-mzM"/>
-                    <constraint firstAttribute="trailing" secondItem="H9q-DC-jSF" secondAttribute="trailing" constant="9" id="d9e-W5-d5H"/>
                     <constraint firstAttribute="trailing" secondItem="0SH-Xh-AfP" secondAttribute="trailing" constant="63" id="fgr-dY-7n0"/>
                     <constraint firstItem="0SH-Xh-AfP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="63" id="haR-pM-vP2"/>
                     <constraint firstItem="FVi-FL-M63" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="s2t-fT-1Bl"/>
@@ -47,14 +49,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="favImage" destination="H9q-DC-jSF" id="eiN-EI-xMp"/>
+                <outlet property="favoriteButton" destination="vQc-zk-LWv" id="OF5-RN-zZh"/>
                 <outlet property="rocketImage" destination="0SH-Xh-AfP" id="2nd-JU-lVG"/>
                 <outlet property="rocketName" destination="FVi-FL-M63" id="3E2-Du-weT"/>
             </connections>
             <point key="canvasLocation" x="210.1449275362319" y="29.129464285714285"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="barsTabBarElementsItemsStar" width="48" height="47"/>
-    </resources>
 </document>

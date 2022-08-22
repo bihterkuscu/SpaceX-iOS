@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UITabBar.appearance().standardAppearance = tabBarApperance
         }
         FirebaseApp.configure()
+        let db = Firestore.firestore()
+        
         return true
     }
 
