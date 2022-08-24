@@ -15,15 +15,11 @@ final class RocketViewCell: UITableViewCell {
     
      var delegate : RocketViewCellProtocol?
     
-    //var closure: (()->())?
     @IBOutlet weak var rocketImage: UIImageView!
     @IBOutlet weak var rocketName: UILabel!
 
     @IBOutlet weak var favoriteButton: UIButton!
-//    @IBAction func favButtonAction(_ sender: UIButton) {
-//
-    //closure?()
-//    }
+
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -33,11 +29,6 @@ final class RocketViewCell: UITableViewCell {
         favoriteButton.setImage(imageFilled, for: .selected)
 
     }
-
-//    @IBAction func didTapButton(sender: UIButton) {
-//        delegate?.didSelect(cell: self)
-//        }
-
 
     @IBAction func favButtonAction(_ sender: UIButton) {
         
@@ -49,14 +40,7 @@ final class RocketViewCell: UITableViewCell {
             favoriteButton.isSelected.toggle()
         }
     }
-    
-    
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-      // Configure the view for the selected state
-//    }
-//}
+
 var imageList = NSCache<AnyObject, AnyObject>()
 extension UIImageView {
     func load(urlString: String) {

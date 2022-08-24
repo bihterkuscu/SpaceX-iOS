@@ -19,7 +19,7 @@ class RocketsViewController: UIViewController,UITableViewDataSource, UITableView
 
        private var rocketsTableViewModel: RocketsTableViewModel!
     
-        private var favorities : NSDictionary!
+        private var favorites : NSDictionary!
     
 
     
@@ -62,7 +62,7 @@ class RocketsViewController: UIViewController,UITableViewDataSource, UITableView
                 if let err = err {
                     print("Error getting documents: \(err)")
                     } else {
-                        self.favorities = querySnapshot?.data()! as NSDictionary?
+                        self.favorites = querySnapshot?.data()! as NSDictionary?
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
@@ -109,14 +109,13 @@ class RocketsViewController: UIViewController,UITableViewDataSource, UITableView
         let rocketsViewModel = self.rocketsTableViewModel.rocketsAtIndexPath(indexPath.row)
         cell.rocketName.text = rocketsViewModel.rocketsName
         cell.rocketImage.load(urlString: rocketsViewModel.rocketsImage[0])
-        //cell.delegate = self
         cell.favoriteButton.addTarget(self, action: #selector(didTapCellButton(sender:)), for: .touchUpInside)
             
         var star="barsTabBarElementsItemsStar"
            
         
-        if(self.favorities?[rocketsViewModel.rocketId] != nil){
-            let rocketD = self.favorities?[rocketsViewModel.rocketId]! as! Dictionary<String,AnyObject>
+        if(self.favorites?[rocketsViewModel.rocketId] != nil){
+            let rocketD = self.favorites?[rocketsViewModel.rocketId]! as! Dictionary<String,AnyObject>
             if((rocketD[FavoritesDB.favorite]!) as! Bool==true){
                  star = "barsTabBarElementsItemsActivePressedStar"
              }
@@ -137,8 +136,8 @@ class RocketsViewController: UIViewController,UITableViewDataSource, UITableView
         let rocketsViewModel = self.rocketsTableViewModel.rocketsAtIndexPath(indexPath.row)
         let dc = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         dc.detailsData=rocketsViewModel.rockets
-        if(self.favorities?[rocketsViewModel.rocketId] != nil){
-            let rocketD = self.favorities?[rocketsViewModel.rocketId]! as! Dictionary<String,AnyObject>
+        if(self.favorites?[rocketsViewModel.rocketId] != nil){
+            let rocketD = self.favorites?[rocketsViewModel.rocketId]! as! Dictionary<String,AnyObject>
             if((rocketD[FavoritesDB.favorite]!) as! Bool==true){
                 dc.isFav=true
              }

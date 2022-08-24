@@ -14,7 +14,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     
     let db = Firestore.firestore()
     
-    private var favorities : [String]! = []
+    private var favorites : [String]! = []
     private var rocketsTableViewModel: RocketsTableViewModel!
 
     override func viewDidLoad() {
@@ -25,12 +25,13 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         favTableView.dataSource = self
         favTableView.delegate = self
         favTableView.backgroundView = UIImageView(image: UIImage(named: "spaceXIOsBg"))
+        
         getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getFavorities()
+        getFavorites()
     }
     
     
@@ -48,8 +49,8 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     // TODO: veri tabanından kaydı çekerken sorguya favorite alanı 1 olanları getir dememiz lazım.
-    func getFavorities(){
-        self.favorities = []
+    func getFavorites(){
+        self.favorites = []
         let ref = self.db.collection(FavoritesDB.collectionName).document(Auth.auth().currentUser!.uid)
         
         ref.getDocument(){ (querySnapshot,err) in
@@ -61,7 +62,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
                         datas?.forEach({ (key: String, value: Any) in
                             let rocketD = value as! NSDictionary
                                 if((rocketD[FavoritesDB.favorite]!) as! Bool==true){
-                                    self.favorities.append(key as! String)
+                                    self.favorites.append(key as! String)
                                     
                                 }
                         })
@@ -75,13 +76,13 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return self.favorities == nil ? 0 : self.favorities.count
+        return self.favorites == nil ? 0 : self.favorites.count
     }
     
     @objc func didTapCellButton(sender: UIButton) {
         
         let indexPath = sender.tag
-        let rocketId = self.favorities[indexPath]
+        let rocketId = self.favorites[indexPath]
         let ref = self.db.collection(FavoritesDB.collectionName).document(Auth.auth().currentUser!.uid)
             ref.setData([
                 rocketId : [
@@ -90,7 +91,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
             
                     // TODO: satırı sil
      
-        self.favorities.remove(at: indexPath)
+        self.favorites.remove(at: indexPath)
                 DispatchQueue.main.async {
                     self.favTableView.reloadData()
                 }
@@ -101,7 +102,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     
         let cell  = tableView.dequeueReusableCell(withIdentifier: "rocketcell", for: indexPath) as! RocketViewCell
         let rocketList = rocketsTableViewModel.rocketList
-        let rocketData :(RocketData) = rocketList.first{$0.id == self.favorities![indexPath.row]}!
+        let rocketData :(RocketData) = rocketList.first{$0.id == self.favorites![indexPath.row]}!
     
         cell.rocketName.text = rocketData.name
         cell.rocketImage.load(urlString: rocketData.flickr_images[0])
@@ -118,7 +119,7 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let rocketList = rocketsTableViewModel.rocketList
-        let rocketData :(RocketData) = rocketList.first{$0.id == self.favorities![indexPath.row]}!
+        let rocketData :(RocketData) = rocketList.first{$0.id == self.favorites![indexPath.row]}!
         let dc = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         dc.detailsData=rocketData
         dc.isFav=true

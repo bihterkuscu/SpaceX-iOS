@@ -23,7 +23,6 @@ extension RocketsTableViewModel {
 }
 
 struct RocketsViewModel {
-    
     let rockets: RocketData
 }
 
@@ -32,9 +31,9 @@ extension RocketsViewModel {
         return self.rockets.name
     }
     
-    var rocketsImage: Array<String> {
+    var rocketsImage: [String] {
         return self.rockets.flickr_images
-    }
+        }
     
     var rocketId: String {
         return self.rockets.id
