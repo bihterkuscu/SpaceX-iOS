@@ -6,7 +6,7 @@
 //
 
 struct K {
-    static let cellIdentifier = "cell"
+    static let cellIdentifier = "rocketcell"
     static let cellNibName = "RocketViewCell"
     static let registerSegue = "RegisterToApp"
     static let loginSegue = "LoginToApp"
@@ -30,9 +30,8 @@ enum ContentType: String {
 struct FavoritesDB {
     static let collectionName = "Favorites"
     static let userId = "UserUid"
-    static let description = "description"
-    static let images = "flickr_images"
-    static let id = "id"
-    static let name = "name"
-    static let type = "type"
+    static let favRocketID = "favRocketID"
+    static let rocketImages = "Flicker_images"
+    static let rocketName = "RocketName"
+    static let favorite = "Favorite"
 }

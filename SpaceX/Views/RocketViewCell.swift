@@ -7,43 +7,56 @@
 
 import UIKit
 
-class RocketViewCell: UITableViewCell {
+protocol RocketViewCellProtocol {
+ func didSelect(cell: RocketViewCell)
+}
 
+final class RocketViewCell: UITableViewCell {
+    
+     var delegate : RocketViewCellProtocol?
+    
+    //var closure: (()->())?
     @IBOutlet weak var rocketImage: UIImageView!
     @IBOutlet weak var rocketName: UILabel!
-   
-    @IBOutlet weak var favButton: UIButton!
-    @IBAction func favButtonn(_ sender: UIButton) {
-        
-//        if let fav = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
-//            db.collection(K.FStore.collectionName).addDocument(data: [
-//                K.FStore.senderField: messageSender,
-//                K.FStore.bodyField: messageBody,
-//                K.FStore.dateField: Date().timeIntervalSince1970
-//            ]) { (error) in
-//                if let e = error {
-//                    print("There was an issue saving data to firestore, \(e)")
-//                } else {
-//                    print("Successfully saved data.")
+
+    @IBOutlet weak var favoriteButton: UIButton!
+//    @IBAction func favButtonAction(_ sender: UIButton) {
 //
-//                    DispatchQueue.main.async {
-//                         self.messageTextfield.text = ""
-//                    }
-//                }
-//            }
-//        }
-    }
+    //closure?()
+//    }
     override func awakeFromNib() {
+        
         super.awakeFromNib()
-        // Initialization code
+        let image = UIImage(named: "barsTabBarElementsItemsStar")
+        let imageFilled = UIImage(named: "barsTabBarElementsItemsActivePressedStar")
+        favoriteButton.setImage(image, for: .normal)
+        favoriteButton.setImage(imageFilled, for: .selected)
+
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+//    @IBAction func didTapButton(sender: UIButton) {
+//        delegate?.didSelect(cell: self)
+//        }
 
-        // Configure the view for the selected state
+
+    @IBAction func favButtonAction(_ sender: UIButton) {
+        
+        guard let cell = (sender as AnyObject).superview?.superview as? RocketViewCell else {
+                return // or fatalError() or whatever
+            }
+
+        self.delegate!.didSelect(cell: cell)
+            favoriteButton.isSelected.toggle()
+        }
     }
-}
+    
+    
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+      // Configure the view for the selected state
+//    }
+//}
 var imageList = NSCache<AnyObject, AnyObject>()
 extension UIImageView {
     func load(urlString: String) {
@@ -62,3 +75,6 @@ extension UIImageView {
         }
     }
 }
+
+
+

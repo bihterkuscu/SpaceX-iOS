@@ -35,4 +35,8 @@ extension RocketsViewModel {
     var rocketsImage: Array<String> {
         return self.rockets.flickr_images
     }
+    
+    var rocketId: String {
+        return self.rockets.id
+    }
 }

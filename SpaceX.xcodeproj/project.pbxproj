@@ -15,6 +15,7 @@
 		BA19564028A0D68600F00C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA19563F28A0D68600F00C4E /* Assets.xcassets */; };
 		BA19564328A0D68600F00C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA19564128A0D68600F00C4E /* LaunchScreen.storyboard */; };
 		BA19567228A2304300F00C4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19567128A2304300F00C4E /* Constants.swift */; };
+		BA93C5D128B57F7300C642D7 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93C5D028B57F7300C642D7 /* FavoritesViewController.swift */; };
 		BA99EADC28A38C2E00735615 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EADB28A38C2E00735615 /* Data.swift */; };
 		BA99EB1E28AA661B00735615 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EB1D28AA661B00735615 /* ApiService.swift */; };
 		BA99EB3828AB636000735615 /* RocketViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA99EB3628AB636000735615 /* RocketViewCell.swift */; };
@@ -47,6 +48,7 @@
 		BA19564228A0D68600F00C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA19564428A0D68600F00C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA19567128A2304300F00C4E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BA93C5D028B57F7300C642D7 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BA99EADB28A38C2E00735615 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		BA99EB1D28AA661B00735615 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		BA99EB3628AB636000735615 /* RocketViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				BA19563A28A0D68300F00C4E /* RocketsViewController.swift */,
 				BA99EB4728ABAC8200735615 /* DetailsViewController.swift */,
+				BA93C5D028B57F7300C642D7 /* FavoritesViewController.swift */,
 				BAC37B2B28AE75B100BF136D /* Upcoming */,
 				BAC37B2828AE250100BF136D /* Login */,
 			);
@@ -336,6 +339,7 @@
 				BAA66C6F28AF7DC5000BE982 /* UpcomingDetailsViewController.swift in Sources */,
 				BAA66C7728B2BF6C000BE982 /* DateOperation.swift in Sources */,
 				BAC37B2A28AE75A300BF136D /* UpcomingViewController.swift in Sources */,
+				BA93C5D128B57F7300C642D7 /* FavoritesViewController.swift in Sources */,
 				BA99EB4828ABAC8200735615 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

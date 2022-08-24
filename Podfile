@@ -8,4 +8,9 @@ target 'SpaceX' do
   # Pods for SpaceX
 	pod 'Firebase/Auth'
 	pod 'Firebase/Firestore'
+	pod 'ImageSlideshow', '~> 1.9.0'
+	pod 'Alamofire'
+	pod 'AlamofireImage', '~> 4.1'
+	pod 'Glideshow'
+	pod 'Firebase/Database'
 end
