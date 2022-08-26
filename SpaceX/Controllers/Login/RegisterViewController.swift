@@ -15,11 +15,11 @@ class RegisterViewController: UIViewController {
     @IBAction func registerPressed(_ sender: UIButton) {
         
         if let email = emailTextfield.text, let password = passwordTextfield.text {
-            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
                     self.makeAlert(errorMessage: error!.localizedDescription)
                 } else {
-                    self.performSegue(withIdentifier: K.loginSegue, sender: self)
+                    self.performSegue(withIdentifier: K.registerSegue, sender: self)
                 }
             }
         }
@@ -46,7 +46,7 @@ extension UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-
+    
     @objc func dismissKeyboardd() {
         view.endEditing(true)
     }

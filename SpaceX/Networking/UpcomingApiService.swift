@@ -51,8 +51,8 @@ struct UpcomingManager {
                 print(error.localizedDescription)
                 completion(nil)
             } else if let data = data {
-           
-            
+                
+                
                 let upcomingArray = try? JSONDecoder().decode([UpcomingData].self, from: data)
                 if let upcomingArray = upcomingArray {
                     completion(upcomingArray)

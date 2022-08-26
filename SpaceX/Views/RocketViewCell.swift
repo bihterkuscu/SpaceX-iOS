@@ -17,7 +17,6 @@ final class RocketViewCell: UITableViewCell {
     
     @IBOutlet weak var rocketImage: UIImageView!
     @IBOutlet weak var rocketName: UILabel!
-
     @IBOutlet weak var favoriteButton: UIButton!
 
     override func awakeFromNib() {
@@ -59,6 +58,3 @@ extension UIImageView {
         }
     }
 }
-
-
-

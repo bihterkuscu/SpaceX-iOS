@@ -58,6 +58,3 @@ struct RocketManager {
         }.resume()
     }
 }
-
-
-    

@@ -9,14 +9,14 @@ import UIKit
 import Firebase
 
 class FavoritesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var favTableView: UITableView!
     
     let db = Firestore.firestore()
     
     private var favorites : [String]! = []
     private var rocketsTableViewModel: RocketsTableViewModel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,49 +33,45 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewWillAppear(animated)
         getFavorites()
     }
-    
-    
     func getData() {
         let url = URL(string: "https://api.spacexdata.com/v4/rockets")
         RocketManager().downloadRockets(url: url!) { (rockets) in
             if let rockets = rockets {
                 self.rocketsTableViewModel = RocketsTableViewModel(rocketList: rockets)
-               
+                
                 DispatchQueue.main.async {
                     self.favTableView.reloadData()
                 }
             }
         }
     }
-    
-    // TODO: veri tabanından kaydı çekerken sorguya favorite alanı 1 olanları getir dememiz lazım.
     func getFavorites(){
         self.favorites = []
         let ref = self.db.collection(FavoritesDB.collectionName).document(Auth.auth().currentUser!.uid)
         
         ref.getDocument(){ (querySnapshot,err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                    } else {
-                        var datas = querySnapshot?.data()!
-                        
-                        datas?.forEach({ (key: String, value: Any) in
-                            let rocketD = value as! NSDictionary
-                                if((rocketD[FavoritesDB.favorite]!) as! Bool==true){
-                                    self.favorites.append(key as! String)
-                                    
-                                }
-                        })
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                var datas = querySnapshot?.data()
+                
+                datas?.forEach({ (key: String, value: Any) in
+                    let rocketD = value as! NSDictionary
+                    if((rocketD[FavoritesDB.favorite]!) as! Bool==true){
+                        self.favorites.append(key as! String)
                         
                     }
-                        DispatchQueue.main.async {
-                            self.favTableView.reloadData()
-                        }
-                }
+                })
+                
+            }
+            DispatchQueue.main.async {
+                self.favTableView.reloadData()
+            }
         }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return self.favorites == nil ? 0 : self.favorites.count
     }
     
@@ -84,26 +80,25 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         let indexPath = sender.tag
         let rocketId = self.favorites[indexPath]
         let ref = self.db.collection(FavoritesDB.collectionName).document(Auth.auth().currentUser!.uid)
-            ref.setData([
-                rocketId : [
-                        FavoritesDB.favorite : false
-                    ]], merge: true)
-            
-                    // TODO: satırı sil
-     
+        ref.setData([
+            rocketId : [
+                FavoritesDB.favorite : false
+            ]], merge: true)
+        
+        // TODO: remove row
+        
         self.favorites.remove(at: indexPath)
-                DispatchQueue.main.async {
-                    self.favTableView.reloadData()
-                }
-
-            }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        DispatchQueue.main.async {
+            self.favTableView.reloadData()
+        }
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell  = tableView.dequeueReusableCell(withIdentifier: "rocketcell", for: indexPath) as! RocketViewCell
         let rocketList = rocketsTableViewModel.rocketList
         let rocketData :(RocketData) = rocketList.first{$0.id == self.favorites![indexPath.row]}!
-    
+        
         cell.rocketName.text = rocketData.name
         cell.rocketImage.load(urlString: rocketData.flickr_images[0])
         cell.favoriteButton.addTarget(self, action: #selector(didTapCellButton(sender:)), for: .touchUpInside)
@@ -125,6 +120,4 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         dc.isFav=true
         self.navigationController?.pushViewController(dc, animated: true)
     }
-    
-
 }

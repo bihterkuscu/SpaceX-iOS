@@ -16,12 +16,10 @@ class RocketsViewController: UIViewController,UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     let db = Firestore.firestore()
-
-       private var rocketsTableViewModel: RocketsTableViewModel!
     
-        private var favorites : NSDictionary!
+    private var rocketsTableViewModel: RocketsTableViewModel!
     
-
+    private var favorites : NSDictionary!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,18 +54,18 @@ class RocketsViewController: UIViewController,UITableViewDataSource, UITableView
     
     func getFavorities(){
         let ref = self.db.collection(FavoritesDB.collectionName).document(Auth.auth().currentUser!.uid)
-
+        
         ref.getDocument(){
-                (querySnapshot,err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                    } else {
-                        self.favorites = querySnapshot?.data()! as NSDictionary?
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-
-                    }
+            (querySnapshot,err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                self.favorites = querySnapshot?.data() as NSDictionary?
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            }
         }
     }
     
@@ -80,7 +78,7 @@ class RocketsViewController: UIViewController,UITableViewDataSource, UITableView
         let indexPath = sender.tag
         let rocket :RocketData = rocketsTableViewModel.rocketList[indexPath]
         let ref = self.db.collection(FavoritesDB.collectionName).document(Auth.auth().currentUser!.uid)
-
+        
         ref.getDocument { querySnapshot, error in
             var fav = true;
             if(querySnapshot?.data() != nil && (querySnapshot?.data()?[rocket.id]) != nil){
@@ -92,17 +90,17 @@ class RocketsViewController: UIViewController,UITableViewDataSource, UITableView
             }
             
             ref.setData([
-                    rocket.id : [
-                        FavoritesDB.favorite : fav
-                    ]], merge: true)
+                rocket.id : [
+                    FavoritesDB.favorite : fav
+                ]], merge: true)
             
             var star="barsTabBarElementsItemsStar"
-                if(fav==true){
-                    star = "barsTabBarElementsItemsActivePressedStar"
-                }
-                sender.setImage(UIImage(named: star), for: .normal)
+            if(fav==true){
+                star = "barsTabBarElementsItemsActivePressedStar"
             }
-   }
+            sender.setImage(UIImage(named: star), for: .normal)
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "rocketcell", for: indexPath) as! RocketViewCell
@@ -110,19 +108,19 @@ class RocketsViewController: UIViewController,UITableViewDataSource, UITableView
         cell.rocketName.text = rocketsViewModel.rocketsName
         cell.rocketImage.load(urlString: rocketsViewModel.rocketsImage[0])
         cell.favoriteButton.addTarget(self, action: #selector(didTapCellButton(sender:)), for: .touchUpInside)
-            
+        
         var star="barsTabBarElementsItemsStar"
-           
+        
         
         if(self.favorites?[rocketsViewModel.rocketId] != nil){
             let rocketD = self.favorites?[rocketsViewModel.rocketId]! as! Dictionary<String,AnyObject>
             if((rocketD[FavoritesDB.favorite]!) as! Bool==true){
-                 star = "barsTabBarElementsItemsActivePressedStar"
-             }
+                star = "barsTabBarElementsItemsActivePressedStar"
+            }
         }
         
         cell.favoriteButton.setImage(UIImage(named: star), for: .normal)
-
+        
         cell.favoriteButton.tag = indexPath.row
         
         return cell
@@ -140,7 +138,7 @@ class RocketsViewController: UIViewController,UITableViewDataSource, UITableView
             let rocketD = self.favorites?[rocketsViewModel.rocketId]! as! Dictionary<String,AnyObject>
             if((rocketD[FavoritesDB.favorite]!) as! Bool==true){
                 dc.isFav=true
-             }
+            }
         }
         self.navigationController?.pushViewController(dc, animated: true)
     }
